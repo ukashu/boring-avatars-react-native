@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { hashCode, getUnit, getBoolean, getRandomColor, getContrast } from '../utilities.js';
-import Svg, { Mask, Rect, G, Path, Text } from 'react-native-svg'
+import Svg, { Rect, G, Path, Text, ClipPath } from 'react-native-svg'
 
 const SIZE = 36;
 
@@ -49,10 +49,10 @@ const AvatarBeam = (props) => {
       height={props.size}
     >
       {props.title && <Text>{props.name}</Text>}
-      <Mask id={maskID} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
+      <ClipPath id={maskID} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
         <Rect width={SIZE} height={SIZE} rx={props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
-      </Mask>
-      <G mask={`url(#${maskID})`}>
+      </ClipPath>
+      <G clipPath={`url(#${maskID})`}>
         <Rect width={SIZE} height={SIZE} fill={data.backgroundColor} />
         <Rect
           x="0"
