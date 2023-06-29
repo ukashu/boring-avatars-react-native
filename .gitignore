@@ -1,0 +1,6 @@
+build
+node_modules
+
+dist/
+
+boring-avatars-react-native-1.0.0.tgz
