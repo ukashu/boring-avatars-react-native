@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Allows you to use the boring-avatars react package inside of react native. Fixes pixelated avatar problem.",
   "main": "dist/index.js",
+  "files": ["/dist"],
   "type": "module",
   "scripts": {},
   "repository": {
