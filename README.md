@@ -1,3 +1,4 @@
+[![view on npm](https://badgen.net/npm/v/@ukashu/boring-avatars-react-native)](https://www.npmjs.com/package/@ukashu/boring-avatars-react-native?activeTab=readme)
 # boring-avatars-react-native
 <p>Simple React Native implementation of <a href='https://github.com/boringdesigners/boring-avatars'>Boring Avatars</a>.<p/>
 <p>Fixes blurry svg problem from other React Native implementations. Tested in Expo Go.</p>
