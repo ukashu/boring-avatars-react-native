@@ -1,6 +1,6 @@
 # boring-avatars-react-native
 <p>Simple React Native implementation of <a href='https://github.com/boringdesigners/boring-avatars'>Boring Avatars</a>.<p/>
-<p>Fixes blurry svg problem from other React Native implementations.</p>
+<p>Fixes blurry svg problem from other React Native implementations. Tested in Expo Go.</p>
 
 ## Installation
 ```npm i @ukashu/boring-avatars-react-native```
