@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "files": ["/dist"],
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "build": "npx webpack --config webpack.config.cjs"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ukashu/boring-avatars-react-native.git"
