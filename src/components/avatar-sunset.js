@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { hashCode, getRandomColor } from '../utilities.js';
-import Svg, { Mask, Rect, G, Defs, LinearGradient, Text } from 'react-native-svg'
+import Svg, { ClipPath, Rect, G, Defs, LinearGradient, Stop, Text, Path } from 'react-native-svg'
 
 const ELEMENTS = 4;
 const SIZE = 80;
@@ -31,10 +31,10 @@ const AvatarSunset = (props) => {
       height={props.size}
     >
       {props.title && <Text>{props.name}</Text>}
-      <Mask id={maskID} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
+      <ClipPath id={maskID} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
         <Rect width={SIZE} height={SIZE} rx={props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
-      </Mask>
-      <G mask={`url(#${maskID})`}>
+      </ClipPath>
+      <G clipPath={`url(#${maskID})`}>
         <Path fill={'url(#gradient_paint0_linear_' + name + ')'} d="M0 0h80v40H0z" />
         <Path fill={'url(#gradient_paint1_linear_' + name + ')'} d="M0 40h80v40H0z" />
       </G>

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { hashCode, getRandomColor } from '../utilities.js';
-import Svg, { Mask, Rect, G } from 'react-native-svg'
+import Svg, { ClipPath, Rect, G } from 'react-native-svg'
 
 const ELEMENTS = 64;
 const SIZE = 80;
@@ -30,7 +30,7 @@ const AvatarPixel = (props) => {
       height={props.size}
     >
       {props.title && <title>{props.name}</title>}
-      <Mask
+      <ClipPath
         id={maskID}
         mask-type="alpha"
         maskUnits="userSpaceOnUse"
@@ -40,8 +40,8 @@ const AvatarPixel = (props) => {
         height={SIZE}
       >
         <Rect width={SIZE} height={SIZE} rx={props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
-      </Mask>
-      <G mask={`url(#${maskID})`}>
+      </ClipPath>
+      <G clipPath={`url(#${maskID})`}>
         <Rect width={10} height={10} fill={pixelColors[0]} />
         <Rect x={20} width={10} height={10} fill={pixelColors[1]} />
         <Rect x={40} width={10} height={10} fill={pixelColors[2]} />

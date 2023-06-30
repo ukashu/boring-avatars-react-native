@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { hashCode, getUnit, getRandomColor, getBoolean } from '../utilities.js';
-import Svg, { Mask, Rect, Text, G, Circle, Line } from 'react-native-svg'
+import Svg, { Mask, Rect, Text, G, Circle, Line, ClipPath } from 'react-native-svg'
 
 const ELEMENTS = 4;
 const SIZE = 80;
@@ -34,10 +34,10 @@ const AvatarBauhaus = (props) => {
       height={props.size}
     >
       {props.title && <Text>{props.name}</Text>}
-      <Mask id={maskID} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
+      <ClipPath id={maskID} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
         <Rect width={SIZE} height={SIZE} rx={props.square ? undefined : SIZE * 2} fill="#FFFFFF" />
-      </Mask>
-      <G mask={`url(#${maskID})`}>
+      </ClipPath>
+      <G clipPath={`url(#${maskID})`}>
         <Rect width={SIZE} height={SIZE} fill={properties[0].color} />
         <Rect
           x={(SIZE - 60) / 2}
